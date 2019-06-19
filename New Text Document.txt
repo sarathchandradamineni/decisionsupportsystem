@@ -1,0 +1,467 @@
+<style type="text/css">
+    @import url("https://fonts.googleapis.com/css?family=Segoe+UI");
+</style>
+
+<style type="text/css">
+    * {
+        box-sizing: border-box;
+    }
+
+    .ddr-page-wrapper {
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+        font-family: sans-serif;
+        font-size: 16px;
+		    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    }
+
+    .ddr-page-wrapper .ddr-page {
+        position: relative;
+    }
+
+    .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::after,
+    .ddr-page-wrapper .ddr-page .ddr-page-section-pre-content::before,
+    .ddr-page-wrapper .ddr-page>div::after,
+    .ddr-page-wrapper .ddr-page>div::before {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .ddr-page-row,
+    .ddr-page-section-wrapper .ddr-page-section {
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .ddr-page-row {
+        display: flex;
+        width: 100%;
+    }
+
+    .ddr-page-row__wrap {
+        flex-wrap: wrap;
+    }
+
+    .ddr-page-row__wrap .ddr-page-column__wrap {
+        width: 100% !important;
+    }
+
+    .ddr-page-row__wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .ddr-page-row__wrap-reverse .ddr-page-column__wrap-reverse {
+        width: 100% !important;
+    }
+
+    .ddr-page-column {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        position: relative;
+        align-content: flex-start;
+    }
+
+    .ddr-page-widget {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ddr-widget {
+        background-color: transparent;
+        background-image: none;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        height: auto;
+        width: auto;
+        max-height: none;
+        max-width: none;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+    }
+
+    .ddr-widget__image {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+        display: flex;
+    }
+
+    .ddr-widget__image a,
+    .ddr-widget__image img {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .ddr-widget__image img {
+        display: block;
+    }
+
+    .ddr-widget__image a,
+    .ddr-widget__image a:active,
+    .ddr-widget__image a:focus,
+    .ddr-widget__image a:hover,
+    .ddr-widget__image a:link,
+    .ddr-widget__image a:visited {
+        display: inline-block;
+        vertical-align: middle;
+        color: inherit;
+        text-decoration: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .ddr-widget__headline {
+        position: relative;
+        overflow: hidden;
+        word-break: break-word;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form {
+        display: flex;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-label {
+        display: flex;
+        overflow: hidden;
+        width: 30%;
+        font-weight: 700;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-label>div {
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-value {
+        display: flex;
+        width: 70%;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-value>div,
+    .ddr-widget__form-wrapper .ddr-widget__form-value>input {
+        padding: 4px 3px;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-value>input,
+    .ddr-widget__form-wrapper .ddr-widget__form-value>select,
+    .ddr-widget__form-wrapper .ddr-widget__form-value>textarea {
+        font-family: sans-serif;
+        width: 250px;
+        border: 1px solid rgb(169, 169, 169);
+        max-width: 100%;
+        padding: 4px 3px;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-right .ddr-widget__form-label {
+        justify-content: flex-end;
+        padding-right: 15px;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-left .ddr-widget__form-label {
+        justify-content: flex-start;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-top {
+        flex-direction: column;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-top .ddr-widget__form-label,
+    .ddr-widget__form-wrapper .ddr-widget__form-top .ddr-widget__form-value {
+        width: 100%;
+    }
+
+    @media (max-width: 480px) {
+        .ddr-widget__form-wrapper .ddr-widget__form {
+            flex-direction: column;
+        }
+
+        .ddr-widget__form-wrapper .ddr-widget__form-label,
+        .ddr-widget__form-wrapper .ddr-widget__form-value,
+        .ddr-widget__form-wrapper .ddr-widget__form-value>input,
+        .ddr-widget__form-wrapper .ddr-widget__form-value>select,
+        .ddr-widget__form-wrapper .ddr-widget__form-value>textarea {
+            width: 100%;
+        }
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-textarea textarea {
+        resize: both;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-single-choice-option-wrapper {
+        flex-direction: column;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-single-choice-option {
+        margin-bottom: 5px;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-multiple-choice-option-wrapper {
+        flex-direction: column;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-multiple-choice-option {
+        margin-bottom: 5px;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-submit {
+        position: relative;
+        display: flex;
+    }
+
+    .ddr-widget__form-wrapper .ddr-widget__form-submit>button {
+        display: block;
+        overflow: hidden;
+        background-color: rgb(0, 143, 162);
+        box-sizing: content-box;
+        word-break: break-all;
+        transition: all 0.5s ease 0s;
+        border: none;
+        cursor: pointer;
+        box-shadow: none;
+        color: inherit;
+    }
+
+    @media (min-width: 1025px) {
+        .ddr-page-row__wrap--max {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--max .ddr-page-column__wrap--max {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--max {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--max .ddr-page-column__wrap-reverse--max {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--max,
+        .ddr-page-widget__hide--max {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .ddr-page-row__wrap--1024 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--1024 .ddr-page-column__wrap--1024 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--1024 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--1024 .ddr-page-column__wrap-reverse--1024 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--1024,
+        .ddr-page-widget__hide--1024 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) and (min-width: 481px) {
+        .ddr-page-row__wrap--768 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--768 .ddr-page-column__wrap--768 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--768 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--768 .ddr-page-column__wrap-reverse--768 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--768,
+        .ddr-page-widget__hide--768 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) and (min-width: 321px) {
+        .ddr-page-row__wrap--480 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--480 .ddr-page-column__wrap--480 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--480 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--480 .ddr-page-column__wrap-reverse--480 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--480,
+        .ddr-page-widget__hide--480 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 320px) and (min-width: 0px) {
+        .ddr-page-row__wrap--320 {
+            flex-wrap: wrap;
+        }
+
+        .ddr-page-row__wrap--320 .ddr-page-column__wrap--320 {
+            width: 100% !important;
+        }
+
+        .ddr-page-row__wrap-reverse--320 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ddr-page-row__wrap-reverse--320 .ddr-page-column__wrap-reverse--320 {
+            width: 100% !important;
+        }
+
+        .ddr-page-column__hide--320,
+        .ddr-page-widget__hide--320 {	
+            display: none;
+        }
+    }
+
+    [data-ddr-page-widget-additional-css-id="d531bb8b0c"] {
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    #ddr-widget__form-placeholder-1001::placeholder {
+        text-decoration: none;
+        font-size: 25px;
+        color: rgba(28, 189, 29, 1);
+    }
+
+    #ddr-widget__form-placeholder-1100::placeholder {
+
+
+
+        font-size: 25px;
+        color: rgba(28, 189, 29, 1);
+    }
+
+    #ddr-widget__form-submit-1200 {
+        background-color: rgba(28, 189, 29, 1);
+        color: rgba(248, 248, 255, 1);
+    }
+	
+	form
+	{
+	margin-left:350px;
+	margin-right:350px;
+	margin-top:30px;
+	background-image:url('refilll.jpg');
+	background-repeat: no-repeat, repeat;
+	background-position:bottom;
+	background-size: cover;
+	border-radius:50%;
+	}
+	
+</style>
+<div class="ddr-page-wrapper" style="background-image: url(&quot;https://cdn.dragdropr.com/df1b5e38-5571-4c16-a39c-89ece43d5d67/&quot;); background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="ddr-page">
+        <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+            <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;">
+                <div id="ddr-12ec805485" class="ddr-page-widget ddr-page-widget__headline ddr-page-widget-0 " data-ddr-page-widget-additional-css-id="d531bb8b0c">
+                    <div class="ddr-widget" style="background-color: rgb(91, 91, 97); opacity: 0.75;">
+                        <h1 class="ddr-widget__headline" style="margin: 30px; font-size: 55px; color: rgb(28, 189, 29); text-align: center;">IMPLEMENTATION OF LNG &amp; LCNG IN VEHICLES</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form method="POST">
+            <div id="ddr-70e6505ef5" class="ddr-page-section-wrapper ddr-page-section-wrapper-1">
+                <div class="ddr-page-section-pre-content ddr-page-section-pre-content-1">
+                    <div class="ddr-page-section ddr-page-section-1">
+                        <div class="ddr-page-row ddr-page-row-0 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+                            <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;">
+                                <div id="ddr-9004096338" class="ddr-page-widget ddr-page-widget__image ddr-page-widget-0 ">
+                                    <div class="ddr-widget">
+                                        <div class="ddr-widget__image" style="justify-content: center;"><a target="_self" style="width: 60px; height: 60px; border-radius: 40px; margin-left: 0px; margin-top: 70px;"><img src="https://cdn.dragdropr.com/14461b4e-b851-45e0-88d4-57f1bd42d07d/-/resize/60x/" srcset="https://cdn.dragdropr.com/14461b4e-b851-45e0-88d4-57f1bd42d07d/-/resize/60x/ 60w" sizes="60px" style="height: 60px; width: 60px;"></a>
+                                            <div class="ddr-hot-spots__items-wrapper"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ddr-a2ce78185b" class="ddr-page-widget ddr-page-widget__form-text ddr-page-widget-1 ">
+                                    <div class="ddr-widget" style="opacity: 1;">
+                                        <div class="ddr-widget__form-wrapper">
+                                            <div class="ddr-widget__form-text ddr-widget__form ddr-widget__form-right" style="margin: 30px 30px 30px 140px;">
+											<label class="ddr-widget__form-text-content ddr-widget__form-label" style="color:#1cbd1dff; font-size: 40px; font-family:'Segoe UI', sans-serif;">Name</label>
+                                                <div class="ddr-widget__form-text-input ddr-widget__form-value">
+												<input id="ddr-widget__form-placeholder-1001" placeholder="enter your Name" type="text" maxlength="100" name="202e_form-text" required="" style="border-style: solid;font-size: 12px; border-color: rgb(28, 189, 29); border-radius: 18px;">
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-row ddr-page-row-1 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+                            <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;">
+                                <div id="ddr-5313d2f6e0" class="ddr-page-widget ddr-page-widget__form-text ddr-page-widget-0 ">
+                                    <div class="ddr-widget">
+                                        <div class="ddr-widget__form-wrapper">
+                                            <div class="ddr-widget__form-text ddr-widget__form ddr-widget__form-right" style="margin: 0px 10px 30px 125px; border-style: solid; border-width: 0px;">
+											    <label class="ddr-widget__form-text-content ddr-widget__form-label" style="color: rgb(255, 255, 255); font-size: 40px; color:#1cbd1dff; font-family: 'Segoe UI', sans-serif;">Email</label>
+                                                <div class="ddr-widget__form-text-input ddr-widget__form-value" style=	"margin-left:8px">
+												<input id="ddr-widget__form-placeholder-1100" placeholder="enter your email" type="text" name="5538_form-text" required="" style="font-size: 12px; border-radius: 18px; border-color: rgb(28, 189, 29);">
+												</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ddr-page-row ddr-page-row-2 ddr-page-row__wrap--320 ddr-page-row__wrap--480 ddr-page-row__wrap--768">
+                            <div class="ddr-page-column ddr-page-column-0 ddr-page-column__wrap--320 ddr-page-column__wrap--480 ddr-page-column__wrap--768 " style="width: 100%;">
+                                <div id="ddr-b35947185f" class="ddr-page-widget ddr-page-widget__form-submit ddr-page-widget-0 ">
+                                    <div class="ddr-widget">
+                                        <div class="ddr-widget__form-wrapper">
+                                            <div class="ddr-widget__form-submit" style="justify-content: center; margin: 0px 30px 30px; border-radius: 3px;">
+											<button id="ddr-widget__form-submit-1200" type="submit" style="padding: 10px 15px; font-size: 20px; border-radius: 3px; cursor: pointer;">Submit</button>
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

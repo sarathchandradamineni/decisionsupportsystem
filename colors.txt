@@ -1,0 +1,43 @@
+PAGE 1 Login
+==============================================================================
+green 	#1cbd1dff
+
+gray   
+
+change 
+1)in ".ddr-page-wrapper "
+
+add
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+
+ddr-page-section ddr-page-section-1
+
+
+ADD styles for form
+	form
+	{
+	margin-left:350px;
+	margin-right:350px;
+	margin-top:30px;
+	background-image:url('refilll.jpg');
+	background-repeat: no-repeat, repeat;
+	background-position:bottom;
+	background-size: cover;
+	border-radius:50%;
+	}
+
+several other small changes are also there but change them when ever required.
+*********************************************************************************
+PAGE 2
+=============================================================================
+
+	
+*****************************************************************************
+	
